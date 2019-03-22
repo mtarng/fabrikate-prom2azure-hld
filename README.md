@@ -1,3 +1,3 @@
-#Prom2Azure
+# Prom2Azure
 
 Prometheus Metric -> Azure Monitor Exporter
