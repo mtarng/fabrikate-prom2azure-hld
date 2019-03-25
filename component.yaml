@@ -1,0 +1,9 @@
+name: prom2azure-pull
+generator: "static"
+path: "./manifests"
+subcomponents:
+- name: "prometheus"
+  generator: "helm"
+  source: "https://github.com/mtarng/prometheus-to-azure-monitor"
+  method: "git"
+  path: "stable/prometheus"

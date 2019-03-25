@@ -1,0 +1,12 @@
+azure_resource_id: ''
+azure_monitor_region: ''
+azure_ad_clientid=$clientid: ''
+azure_ad_tenantid=$tenantid: ''
+azure_ad_client_secret=$clientsecret: ''
+image_repository: 'repository'
+image_tag: 'tag' # probably hardcode this
+cmd: 'pull' # probably not needed
+
+# ???
+# kube_namespace: ''
+# kube_chartname: ''
