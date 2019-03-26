@@ -1,12 +1,45 @@
-azure_resource_id: ''
-azure_monitor_region: ''
-azure_ad_clientid=$clientid: ''
-azure_ad_tenantid=$tenantid: ''
-azure_ad_client_secret=$clientsecret: ''
-image_repository: 'repository'
-image_tag: 'tag' # probably hardcode this
-cmd: 'pull' # probably not needed
+# azure_resource_id: ''
+# azure_monitor_region: ''
+# azure_ad_clientid=$clientid: ''
+# azure_ad_tenantid=$tenantid: ''
+# azure_ad_client_secret=$clientsecret: ''
+# image_repository: 'repository'
+# image_tag: 'tag' # probably hardcode this
+# cmd: 'pull' # probably not needed
 
 # ???
 # kube_namespace: ''
 # kube_chartname: ''
+
+# TODO: Chart name?
+# TODO: aksnamespace? done through manifest?
+
+config:
+subcomponents:
+  prometheus-to-azure-monitor-pull:
+    config:
+      cmd: "pull"
+      image:
+        repository: "mtarng/prom2azure"
+        tag: "v0.1"
+      env:
+        azure_resoureid: <Azure Resource ID>
+        azure_monitor_region: <Azure Region ex. eastus>
+        azure_ad_clientid: <Client ID GUID>
+        azure_ad_tenantid: <Tenant ID GUID>
+        azure_ad_client_secret: <Client Secret>
+      pull:
+        metric:
+          configFile: # Json config
+
+
+#installing the promazuremonitor chart to aks
+# helm upgrade --install --force --recreate-pods --namespace $aksNamespace $chartName ../charts/promazuremonitor \
+# --set env.azure_resoureid=$resourceid \
+# --set env.azure_monitor_region=$region \
+# --set env.azure_ad_clientid=$clientid \
+# --set env.azure_ad_tenantid=$tenantid \
+# --set env.azure_ad_client_secret=$clientsecret \
+# --set image.tag=$tag \
+# --set cmd=$cmd \
+# --set image.repository=$repository
