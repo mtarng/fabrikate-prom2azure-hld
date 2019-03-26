@@ -7,11 +7,11 @@ subcomponents:
         repository: "mtarng/prom2azure"
         tag: "v0.1"
       env:
-        azure_resoureid: <Azure Resource ID>
-        azure_monitor_region: <Azure Region ex. eastus>
-        azure_ad_clientid: <Client ID GUID>
-        azure_ad_tenantid: <Tenant ID GUID>
-        azure_ad_client_secret: <Client Secret>
+        azure_resoureid: "/subscriptions/7060bca0-7a3c-44bd-b54c-4bb1e9facfac/resourcegroups/mtarng-kube-test-rg/providers/Microsoft.ContainerService/managedClusters/mtarngAKSCluster"
+        azure_monitor_region: "westus2"
+        azure_ad_clientid: "df526ae1-67ab-44d5-8ea9-075ba9618a20"
+        azure_ad_client_secret: 
+        azure_ad_tenantid: "72f988bf-86f1-41af-91ab-2d7cd011db47"
       # pull:
       #   metric:
       #     configFile: # Json config
