@@ -8,4 +8,4 @@ subcomponents:
     method: "git"
   - name: "prom2azure-namespace"
     generator: "static"
-    path: :"./manifests"
+    path: "./manifests"
