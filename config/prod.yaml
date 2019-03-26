@@ -1,0 +1,17 @@
+config:
+subcomponents:
+  prometheus-to-azure-monitor-pull:
+    config:
+      cmd: "pull"
+      image:
+        repository: "mtarng/prom2azure"
+        tag: "v0.1"
+      env:
+        azure_resoureid: <Azure Resource ID>
+        azure_monitor_region: <Azure Region ex. eastus>
+        azure_ad_clientid: <Client ID GUID>
+        azure_ad_tenantid: <Tenant ID GUID>
+        azure_ad_client_secret: <Client Secret>
+      # pull:
+      #   metric:
+      #     configFile: # Json config
