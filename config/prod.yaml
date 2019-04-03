@@ -2,13 +2,13 @@ config:
 subcomponents:
   prometheus-to-azure-monitor-pull:
     config:
-      cmd: "pull"
+      cmd: pull
       image:
-        repository: "mtarng/prom2azure"
-        tag: "v0.1"
+        repository: mtarng/prom2azure
+        tag: v0.1
       env:
-        azure_resoureid: "/subscriptions/7060bca0-7a3c-44bd-b54c-4bb1e9facfac/resourcegroups/mtarng-kube-test-rg/providers/Microsoft.ContainerService/managedClusters/mtarngAKSCluster"
+        azure_resoureid: "/subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroup>/providers/Microsoft.ContainerService/managedClusters/mtarngAKSCluster"
         azure_monitor_region: "westus2"
-        azure_ad_clientid: "df526ae1-67ab-44d5-8ea9-075ba9618a20"
+        azure_ad_clientid: "<Azure AD Client ID>"
         azure_ad_client_secret: <Azure AD Client Secret>
-        azure_ad_tenantid: "72f988bf-86f1-41af-91ab-2d7cd011db47"
+        azure_ad_tenantid: "<Azure Tenant ID>"
