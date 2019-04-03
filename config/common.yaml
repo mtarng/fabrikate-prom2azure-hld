@@ -2,7 +2,6 @@ config:
 subcomponents:
   prometheus-to-azure-monitor-pull:
     config:
-      metadata: prom2azure222
       cmd: pull
       image:
         repository: mtarng/prom2azure
