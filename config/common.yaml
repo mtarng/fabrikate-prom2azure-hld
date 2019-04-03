@@ -2,10 +2,35 @@ config:
 subcomponents:
   prometheus-to-azure-monitor-pull:
     config:
-      cmd: "pull"
+      metadata: prom2azure222
+      cmd: pull
       image:
-        repository: "mtarng/prom2azure"
-        tag: "v0.1"
-      # pull: TBD
-        # metric:
-          # configFile: # Json config
+        repository: mtarng/prom2azure
+        tag: v0.1
+      pull:
+        metric:
+          configFile: 
+            {
+              "config":[
+                {
+                  "promURL":"http://prometheus-server.prometheus.svc.cluster.local:80",
+                  "azureMonitorNamespace":"jvm_threads",
+                  "metrics": [
+                    "jvm_threads_live",
+                    "jvm_threads_daemon",
+                    "jvm_threads_peak"]
+                  },
+                  {
+                    "promURL":"http://prometheus-server.prometheus.svc.cluster.local:80",
+                    "azureMonitorNamespace":"logback",
+                    "metrics": [
+                      "sum(logback_events_total{app=\"spring-boot-api\",level=\"warn\"})"]
+                  },
+                  {
+                    "promURL":"http://prometheus-server.prometheus.svc.cluster.local:80",
+                    "azureMonitorNamespace":"logback-no-sum",
+                    "metrics": [
+                      "logback_events_total{app=\"spring-boot-api\",level=\"warn\"}"]
+                  }
+                ]
+            }

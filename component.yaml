@@ -6,6 +6,4 @@ subcomponents:
     generator: "helm"
     source: "https://github.com/mtarng/prometheus-to-azure-monitor"
     method: "git"
-  - name: "prom2azure-namespace"
-    generator: "static"
-    path: "./manifests"
+    # branch: "adding-namespace"
